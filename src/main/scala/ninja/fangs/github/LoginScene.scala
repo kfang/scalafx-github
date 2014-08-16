@@ -30,7 +30,7 @@ class LoginScene extends Scene {
         val client = new GitHubClient()
         client.setCredentials(username.text.value, password.text.value)
         val repos = new RepositoryService(client)
-        val repoScene = new RepoScene(client, repos)
+        val repoScene = new HomeScene(client, repos)
         IssuesConsole.stage.scene = repoScene
       }
     }
