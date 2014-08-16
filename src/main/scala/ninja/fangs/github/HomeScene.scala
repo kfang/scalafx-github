@@ -24,9 +24,12 @@ class HomeScene(client: GitHubClient, repos: RepositoryService) extends Scene {
     text = title
     content = {
       new ScrollPane(){
-        content = new Label(body)
+        content = new Label(body){
+          wrapText = true
+        }
       }
     }
+
     collapsible = true
   }
 
@@ -84,11 +87,8 @@ class HomeScene(client: GitHubClient, repos: RepositoryService) extends Scene {
     rootView.showRoot = false
 
     content = Seq(rootView)
-    minHeight = 300
-    minWidth = 300
+    maxWidth = 350
     padding = Insets(20)
-    vgrow = Priority.ALWAYS
-    hgrow = Priority.ALWAYS
     style = "-fx-background-color: #336699;"
   }
 
